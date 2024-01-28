@@ -17,14 +17,14 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, BeeCraftSimulator.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, BeeCraftSimulator.MOD_ID);
 
     public static final RegistryObject<Block> PLASTIC_PLANTER = registerBlock("plastic_planter",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlock(name, toReturn);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
 

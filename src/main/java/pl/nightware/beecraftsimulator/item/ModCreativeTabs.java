@@ -13,7 +13,7 @@ import pl.nightware.beecraftsimulator.block.ModBlocks;
 public class ModCreativeTabs
 {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BeeCraftSimulator.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BeeCraftSimulator.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> BEECRAFTSIMULATOR_TAB =
             CREATIVE_MODE_TABS.register("beecraftsimulator_tab", () ->

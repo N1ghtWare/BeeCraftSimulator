@@ -10,7 +10,7 @@ import pl.nightware.beecraftsimulator.BeeCraftSimulator;
 public class ModItems
 {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, BeeCraftSimulator.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, BeeCraftSimulator.MOD_ID);
 
     public static final RegistryObject<Item> ROYAL_JELLY =
             ITEMS.register("royal_jelly", () -> new Item(new Item.Properties()));
