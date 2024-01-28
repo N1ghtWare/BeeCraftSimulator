@@ -18,7 +18,7 @@ public class ModItemInit
 
     public static final RegistryObject<Item> STAR_JELLY = ITEMS.register("star_jelly",
             () -> new Item(new Item.Properties()
-                    .rarity(Rarity.EPIC)
+                    .rarity(Rarity.UNCOMMON)
             ));
 
 
