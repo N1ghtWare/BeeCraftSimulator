@@ -6,19 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
-          "conditions": [
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "beecraftsimulator:plastic_planter",
-              "properties": {
-                "ReadyToHarvest": "true"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "beecraftsimulator:plastic_planter"
         }
       ]

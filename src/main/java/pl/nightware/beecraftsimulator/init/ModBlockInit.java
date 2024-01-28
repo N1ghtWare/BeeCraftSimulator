@@ -18,7 +18,7 @@ public class ModBlockInit
     public static final RegistryObject<Block> PLASTIC_PLANTER = BLOCKS.register("plastic_planter",
             () -> new Block(BlockBehaviour.Properties.of()
                     .noOcclusion()
-
+                    .strength(1.5F)
             ));
 
     public static final RegistryObject<BlockItem> PLASTIC_PLANTER_ITEM = ModItemInit.ITEMS.register("plastic_planter",
