@@ -3,6 +3,7 @@ package pl.nightware.beecraftsimulator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import pl.nightware.beecraftsimulator.init.CreativeTabInit;
 import pl.nightware.beecraftsimulator.init.ModBlockInit;
 import pl.nightware.beecraftsimulator.init.ModItemInit;
 
@@ -16,5 +17,6 @@ public class BeeCraftSimulator
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItemInit.ITEMS.register(eventBus);
         ModBlockInit.BLOCKS.register(eventBus);
+        CreativeTabInit.TABS.register(eventBus);
     }
 }
