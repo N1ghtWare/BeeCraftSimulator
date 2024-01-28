@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import pl.nightware.beecraftsimulator.block.ModBlocks;
 import pl.nightware.beecraftsimulator.item.ModCreativeTabs;
 import pl.nightware.beecraftsimulator.item.ModItems;
 
@@ -34,6 +35,7 @@ public class BeeCraftSimulator
         // register stuff
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // register server
         modEventBus.addListener(this::commonSetup);

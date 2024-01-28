@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
+import pl.nightware.beecraftsimulator.block.ModBlocks;
 
 public class ModCreativeTabs
 {
@@ -23,6 +24,7 @@ public class ModCreativeTabs
                             .displayItems((itemDisplayParameters, output) -> {
                                 output.accept(ModItems.ROYAL_JELLY.get());
                                 output.accept(ModItems.STAR_JELLY.get());
+                                output.accept(ModBlocks.PLASTIC_PLANTER.get());
                             })
                             .build());
 
