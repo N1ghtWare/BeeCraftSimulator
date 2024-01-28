@@ -35,6 +35,7 @@ public class BeeCraftSimulator
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
 
+        // register server
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
