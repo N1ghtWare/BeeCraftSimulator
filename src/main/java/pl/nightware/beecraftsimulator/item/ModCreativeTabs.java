@@ -22,6 +22,7 @@ public class ModCreativeTabs
                             .icon(() -> new ItemStack(ModItems.ROYAL_JELLY.get()))
                             .displayItems((itemDisplayParameters, output) -> {
                                 output.accept(ModItems.ROYAL_JELLY.get());
+                                output.accept(ModItems.STAR_JELLY.get());
                             })
                             .build());
 
