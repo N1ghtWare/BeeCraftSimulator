@@ -15,6 +15,9 @@ public class ModItems
     public static final RegistryObject<Item> ROYAL_JELLY =
             ITEMS.register("royal_jelly", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> STAR_JELLY =
+            ITEMS.register("star_jelly", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
