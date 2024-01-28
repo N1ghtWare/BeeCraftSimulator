@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
+import pl.nightware.beecraftsimulator.block.custom.HiveSlotBlock;
 import pl.nightware.beecraftsimulator.item.ModItems;
 
 import java.util.function.Supplier;
@@ -21,6 +22,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PLASTIC_PLANTER = registerBlock("plastic_planter",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noOcclusion()));
+
+    public static final RegistryObject<Block> HIVE_SLOT = registerBlock("hive_slot",
+            () -> new HiveSlotBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

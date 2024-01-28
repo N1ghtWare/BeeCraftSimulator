@@ -24,6 +24,7 @@ public class ModCreativeTabs
                             .displayItems((itemDisplayParameters, output) -> {
                                 output.accept(ModItems.ROYAL_JELLY.get());
                                 output.accept(ModItems.STAR_JELLY.get());
+
                                 output.accept(ModBlocks.PLASTIC_PLANTER.get());
                             })
                             .build());
