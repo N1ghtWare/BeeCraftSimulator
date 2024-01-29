@@ -23,20 +23,21 @@ public class ModBlockInit
                     .noOcclusion()
                     .strength(1.5F)
             ));
+    public static final RegistryObject<BlockItem> PLASTIC_PLANTER_ITEM = ModItemInit.ITEMS.register("plastic_planter",
+            () -> new BlockItem(ModBlockInit.PLASTIC_PLANTER.get(), new Item.Properties()));
 
     public static final RegistryObject<Block> DARK_FIRE = BLOCKS.register("dark_fire",
             () -> new DarkFireBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.FIRE)
                     .replaceable()
                     .noCollission()
-                    .noOcclusion()
                     .instabreak()
                     .lightLevel((p_152607_) -> {
-                return 15;
-            })
+                        return 15;
+                    })
                     .sound(SoundType.WOOL)
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<BlockItem> PLASTIC_PLANTER_ITEM = ModItemInit.ITEMS.register("plastic_planter",
-            () -> new BlockItem(ModBlockInit.PLASTIC_PLANTER.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> DARK_FIRE_ITEM = ModItemInit.ITEMS.register("dark_fire",
+            () -> new BlockItem(ModBlockInit.DARK_FIRE.get(), new Item.Properties()));
 }
