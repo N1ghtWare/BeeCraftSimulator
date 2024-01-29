@@ -2,5 +2,6 @@
   "parent": "minecraft:block/template_fire_up",
   "textures": {
     "fire": "beecraftsimulator:block/dark_fire_1"
-  }
+  },
+  "render_type": "cutout_mipped"
 }
