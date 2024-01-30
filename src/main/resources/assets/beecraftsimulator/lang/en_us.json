@@ -3,6 +3,15 @@
 
   "item.beecraftsimulator.royal_jelly": "Royal Jelly",
   "item.beecraftsimulator.star_jelly": "Star Jelly",
+  "item.beecraftsimulator.treat": "Treat",
+  "item.beecraftsimulator.star_treat": "Star Treat",
+  "item.beecraftsimulator.atomic_treat": "Atomic Treat",
+  "item.beecraftsimulator.sunflower_seed": "Sunflower Seed",
+  "item.beecraftsimulator.strawberry": "Strawberry",
+  "item.beecraftsimulator.pineapple": "Pineapple",
+  "item.beecraftsimulator.blueberry": "Blueberry",
+  "item.beecraftsimulator.bitterberry": "Bitterberry",
+  "item.beecraftsimulator.neonberry": "Neonberry",
 
   "block.beecraftsimulator.plastic_planter": "Plastic Planter"
 }

@@ -24,7 +24,9 @@ public class ModBlockInit
                     .strength(1.5F)
             ));
     public static final RegistryObject<BlockItem> PLASTIC_PLANTER_ITEM = ModItemInit.ITEMS.register("plastic_planter",
-            () -> new BlockItem(ModBlockInit.PLASTIC_PLANTER.get(), new Item.Properties()));
+            () -> new BlockItem(ModBlockInit.PLASTIC_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
 
     public static final RegistryObject<Block> DARK_FIRE = BLOCKS.register("dark_fire",
             () -> new DarkFireBlock(BlockBehaviour.Properties.of()
