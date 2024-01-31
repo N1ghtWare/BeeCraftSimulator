@@ -18,17 +18,18 @@ public class ModBlockInit
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BeeCraftSimulator.MOD_ID);
 
-    public static final RegistryObject<Block> PLASTIC_PLANTER = BLOCKS.register("plastic_planter",
+    public static final RegistryObject<PlasticPlanterBlock> PLASTIC_PLANTER = BLOCKS.register("plastic_planter",
             () -> new PlasticPlanterBlock(BlockBehaviour.Properties.of()
                     .noOcclusion()
                     .strength(1.5F)
+                    .randomTicks()
             ));
     public static final RegistryObject<BlockItem> PLASTIC_PLANTER_ITEM = ModItemInit.ITEMS.register("plastic_planter",
             () -> new BlockItem(ModBlockInit.PLASTIC_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
 
-    public static final RegistryObject<Block> DARK_FIRE = BLOCKS.register("dark_fire",
+    public static final RegistryObject<DarkFireBlock> DARK_FIRE = BLOCKS.register("dark_fire",
             () -> new DarkFireBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.FIRE)
                     .replaceable()
