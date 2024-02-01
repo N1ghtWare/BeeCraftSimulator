@@ -2,6 +2,7 @@ package pl.nightware.beecraftsimulator.blockentity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +16,7 @@ import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 
 public class PlasticPlanterBlockEntity extends BlockEntity
 {
-    private int counter;
+    private int counter = 0;
 
     public PlasticPlanterBlockEntity(BlockPos pPos, BlockState pBlockState)
     {
@@ -43,16 +44,18 @@ public class PlasticPlanterBlockEntity extends BlockEntity
 
     public int incrementCounter()
     {
+        this.counter++;
+
         if (counter < 10)
         {
-            this.counter++;
             setChanged();
         }
         else
         {
-            ItemEntity diamond = new ItemEntity(this.level, this.getBlockPos().getX(), this.getBlockPos().getY(), this.getBlockPos().getZ(), new ItemStack(Items.DIAMOND));
+            ItemEntity diamond = new ItemEntity(this.level, this.getBlockPos().getX(), this.getBlockPos().getY() + 1.25f, this.getBlockPos().getZ(), new ItemStack(Items.DIAMOND));
             this.level.addFreshEntity(diamond);
             this.counter = 0;
+            return 10;
         }
 
         return this.counter;
