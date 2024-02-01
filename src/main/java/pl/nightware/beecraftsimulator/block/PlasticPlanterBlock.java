@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
@@ -36,12 +37,10 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
 
     public static int GROWTH_SPEED = 10;
 
+    @Nullable
     @Override
-    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
-    {
-        super.tick(pState, pLevel, pPos, pRandom);
-
-        BeeCraftSimulator.LOGGER.warn("TICKED");
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        return pLevel.isClientSide() ? null : (_level, _pos, _state, _blockEntity) -> ((PlasticPlanterBlockEntity)_blockEntity).tick();
     }
 
     @Nullable
@@ -49,6 +48,11 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState)
     {
         return ModBlockEntitiesInit.PLASTIC_PLANTER_ENTITY.get().create(blockPos, blockState);
+    }
+
+    @Override
+    public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+        super.destroy(pLevel, pPos, pState);
     }
 
     @Override
@@ -67,8 +71,11 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
             if (_blockEntity instanceof PlasticPlanterBlockEntity blockEntity)
             {
                 int counter = blockEntity.incrementCounter();
-                pPlayer.sendSystemMessage(Component.literal("Plastic Planter used %d times.".formatted(counter)));
-                return InteractionResult.sidedSuccess(pLevel.isClientSide());
+                pPlayer.sendSystemMessage(Component.literal("Plastic Planter used %d/10 times.".formatted(counter)));
+
+                if (counter == 10) { pPlayer.sendSystemMessage(Component.literal("Oh! Shiny!")); }
+                //return InteractionResult.sidedSuccess(pLevel.isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
 

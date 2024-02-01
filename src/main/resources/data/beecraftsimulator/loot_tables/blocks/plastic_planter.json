@@ -6,7 +6,36 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "beecraftsimulator:plastic_planter"
+          "name": "beecraftsimulator:plastic_planter",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 1.0
+              }
+            },
+            {
+              "function": "minecraft:looting_enchant",
+              "count": {
+                "min": 0.0,
+                "max": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "nbt": "{Counter:10}"
+              }
+            }
+          ]
         }
       ]
     }

@@ -1,5 +1,6 @@
 package pl.nightware.beecraftsimulator.block;
 
+import it.unimi.dsi.fastutil.floats.FloatPredicate;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
