@@ -43,4 +43,13 @@ public class ModBlockInit
 
     public static final RegistryObject<BlockItem> DARK_FIRE_ITEM = ModItemInit.ITEMS.register("dark_fire",
             () -> new BlockItem(ModBlockInit.DARK_FIRE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Block> CABBAGE = BLOCKS.register("cabbage",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.GRASS)
+            ));
+    public static final RegistryObject<BlockItem> CABBAGE_ITEM = ModItemInit.ITEMS.register("cabbage",
+            () -> new BlockItem(ModBlockInit.CABBAGE.get(), new Item.Properties()
+
+            ));
 }

@@ -10,6 +10,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -21,11 +22,15 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import org.jetbrains.annotations.Nullable;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
 import pl.nightware.beecraftsimulator.blockentity.PlasticPlanterBlockEntity;
 import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 import pl.nightware.beecraftsimulator.init.ModBlockInit;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+
 
 public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
 {
@@ -81,6 +86,16 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
 
         return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
+    @Override
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.or(box(4, 0, 4, 12, 1, 12), box(3, 1, 3, 13, 3, 13), box(2, 3, 2, 14, 9, 14), box(3, 8, 3, 13, 14, 13), box(13, 9, 0, 16, 15, 16), box(0, 9, 0, 3, 15, 16), box(3, 9, 0, 13, 15, 3), box(3, 9, 13, 13, 15, 16));
+    }
+
 
     @Nullable
     @Override
