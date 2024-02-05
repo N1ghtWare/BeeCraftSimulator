@@ -6,10 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import pl.nightware.beecraftsimulator.init.CreativeTabInit;
-import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
-import pl.nightware.beecraftsimulator.init.ModBlockInit;
-import pl.nightware.beecraftsimulator.init.ModItemInit;
+import pl.nightware.beecraftsimulator.init.*;
 
 @Mod(BeeCraftSimulator.MOD_ID)
 public class BeeCraftSimulator
@@ -24,6 +21,7 @@ public class BeeCraftSimulator
         ModBlockInit.BLOCKS.register(eventBus);
         ModBlockEntitiesInit.BLOCK_ENTITIES.register(eventBus);
         CreativeTabInit.TABS.register(eventBus);
+        ModMenuInit.MENU_TYPES.register(eventBus);
         LOGGER.debug("Bee Craft Simulator Event Bus Finished!");
     }
 }

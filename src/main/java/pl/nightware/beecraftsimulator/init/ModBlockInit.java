@@ -20,7 +20,7 @@ public class ModBlockInit
 
     public static final RegistryObject<PlasticPlanterBlock> PLASTIC_PLANTER = BLOCKS.register("plastic_planter",
             () -> new PlasticPlanterBlock(BlockBehaviour.Properties.of()
-                    .dynamicShape()
+                    //.dynamicShape()
                     .noOcclusion()
                     .strength(1.5F)
             ));

@@ -1,5 +1,7 @@
 package pl.nightware.beecraftsimulator.init;
 
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -7,6 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
 import pl.nightware.beecraftsimulator.block.PlasticPlanterBlock;
 import pl.nightware.beecraftsimulator.blockentity.PlasticPlanterBlockEntity;
+import pl.nightware.beecraftsimulator.blockentity.PlasticPlanterBlockEntityRenderer;
 
 public class ModBlockEntitiesInit
 {
@@ -18,6 +21,4 @@ public class ModBlockEntitiesInit
                     () -> BlockEntityType.Builder.of(PlasticPlanterBlockEntity::new, ModBlockInit.PLASTIC_PLANTER.get())
                             .build(null)
             );
-
-
 }
