@@ -41,17 +41,17 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
         Level level = blockEntity.getLevel();
         if (level == null) { return; }
 
-        BlockPos pos = blockEntity.getBlockPos().above(3);
+        BlockPos pos = blockEntity.getBlockPos().above();
         float cabbageScaleMultiplier = blockEntity.getCabbageScale();
         int elapsedTime = blockEntity.getPassedTime();
         int requiredTime = blockEntity.getFullGrowthTime();
-        double moveUpRatio = ((double)elapsedTime / (double)requiredTime) * 0.5;
+        double moveUpRatio = ((double)elapsedTime / (double)requiredTime) * 0.4f;
         float finalCabbageScale = ((float)elapsedTime / (float)requiredTime) * cabbageScaleMultiplier;
 
-        if (finalCabbageScale < 0.15f) { finalCabbageScale = 0.15f; moveUpRatio = 0f; }
+        if (finalCabbageScale < 0.2f) { finalCabbageScale = 0.2f; moveUpRatio = 0.0f; }
 
         poseStack.pushPose();
-        poseStack.translate(0.5, 0.8 + moveUpRatio, 0.5);
+        poseStack.translate(0.5, 1 + moveUpRatio, 0.5);
         poseStack.scale(finalCabbageScale, finalCabbageScale, finalCabbageScale);
 
         this.context.getItemRenderer().renderStatic(
