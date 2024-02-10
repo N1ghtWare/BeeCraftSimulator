@@ -41,14 +41,16 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
         Level level = blockEntity.getLevel();
         if (level == null) { return; }
 
-        BlockPos pos = blockEntity.getBlockPos().above();
+        BlockPos pos = blockEntity.getBlockPos().above(3);
         float cabbageScaleMultiplier = blockEntity.getCabbageScale();
         int elapsedTime = blockEntity.getPassedTime();
-        BeeCraftSimulator.LOGGER.warn("received: %d".formatted(elapsedTime));
         int requiredTime = blockEntity.getFullGrowthTime();
+        double moveDownRatio = ((double)elapsedTime / (double)requiredTime) * 0.1;
         float finalCabbageScale = ((float)elapsedTime / (float)requiredTime) * cabbageScaleMultiplier;
+        if (finalCabbageScale < 0.1f) { finalCabbageScale = 0.1f; moveDownRatio = 0f; }
 
         poseStack.pushPose();
+        poseStack.translate(0.5, 1 + moveDownRatio, 0.5);
         poseStack.scale(finalCabbageScale, finalCabbageScale, finalCabbageScale);
 
         this.context.getItemRenderer().renderStatic(
