@@ -52,6 +52,7 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
 
         if (finalCabbageScale < 0.2f) { finalCabbageScale = 0.2f; moveUpRatio = finalCabbageScale / 2; }
 
+        //animation
         poseStack.pushPose();
         poseStack.translate(0.5, .9 + moveUpRatio + additionalYFix, 0.5);
         poseStack.scale(finalCabbageScale, finalCabbageScale, finalCabbageScale);
