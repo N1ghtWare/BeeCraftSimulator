@@ -43,7 +43,7 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
 
         BlockPos pos = blockEntity.getBlockPos().above();
         float cabbageScaleMultiplier = blockEntity.getCabbageScale();
-        cabbageScaleMultiplier = 1.2f;
+        //cabbageScaleMultiplier = 1.2f;
         int elapsedTime = blockEntity.getPassedTime();
         int requiredTime = blockEntity.getFullGrowthTime();
         double moveUpRatio = ((double)elapsedTime / (double)requiredTime) / 2f * cabbageScaleMultiplier;
