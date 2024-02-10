@@ -13,7 +13,5 @@ public class PlanterBlock extends Block
     {
         super(pProperties);
     }
-
-    public static int GROWTH_TIME = 10;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 }

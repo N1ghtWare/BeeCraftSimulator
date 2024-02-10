@@ -2,22 +2,31 @@ package pl.nightware.beecraftsimulator.blockentity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
 import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 
 public class PlasticPlanterBlockEntity extends BlockEntity
 {
-    private int counter = 0;
-
+    private int ticksOfGrowth = 0;
+    public int ticksRequiredForFullGrowth = 100;
+    public float cabbageScaleMultiplier = 1f;
     public PlasticPlanterBlockEntity(BlockPos pPos, BlockState pBlockState)
     {
         super(ModBlockEntitiesInit.PLASTIC_PLANTER_ENTITY.get(), pPos, pBlockState);
@@ -26,43 +35,67 @@ public class PlasticPlanterBlockEntity extends BlockEntity
     public void tick()
     {
         if (this.level == null || this.level.isClientSide()) { return; }
+
+        if (this.ticksOfGrowth < this.ticksRequiredForFullGrowth)
+        {
+            this.ticksOfGrowth++;
+            setChanged();
+
+            this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
+        }
+
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbtTag)
     {
         super.saveAdditional(nbtTag);
-        nbtTag.putInt("Counter", this.counter);
+        nbtTag.putInt("Growth", this.ticksOfGrowth);
+        nbtTag.putInt("RequiredGrowth", this.ticksRequiredForFullGrowth);
     }
 
     @Override
     public void load(CompoundTag nbtTag)
     {
         super.load(nbtTag);
-        this.counter = nbtTag.getInt("Counter");
+        this.ticksOfGrowth = nbtTag.getInt("Growth");
+        this.ticksRequiredForFullGrowth = nbtTag.getInt("RequiredGrowth");
     }
 
-    public int incrementCounter()
+    @Override
+    public CompoundTag getUpdateTag()
     {
-        this.counter++;
-
-        if (counter < 10)
-        {
-            setChanged();
-        }
-        else
-        {
-            ItemEntity diamond = new ItemEntity(this.level, this.getBlockPos().getX(), this.getBlockPos().getY() + 1.25f, this.getBlockPos().getZ(), new ItemStack(Items.DIAMOND));
-            this.level.addFreshEntity(diamond);
-            this.counter = 0;
-            return 10;
-        }
-
-        return this.counter;
+        CompoundTag nbt = super.getUpdateTag();
+        saveAdditional(nbt);
+        return nbt;
     }
 
-    public int getCounter()
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket()
     {
-        return this.counter;
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+//    super() already does that, we don't need to override it
+//    @Override
+//    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt)
+//    {
+//        handleUpdateTag(pkt.getTag());
+//    }
+
+    public float getCabbageScale()
+    {
+        return cabbageScaleMultiplier;
+    }
+
+    public int getPassedTime()
+    {
+        return this.ticksOfGrowth;
+    }
+
+    public int getFullGrowthTime()
+    {
+        return this.ticksRequiredForFullGrowth;
     }
 }

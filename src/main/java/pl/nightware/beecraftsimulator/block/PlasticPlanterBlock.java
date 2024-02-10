@@ -40,8 +40,6 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
         registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
-    public static int GROWTH_SPEED = 10;
-
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
@@ -75,11 +73,10 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
             BlockEntity _blockEntity = pLevel.getBlockEntity(pPos);
             if (_blockEntity instanceof PlasticPlanterBlockEntity blockEntity)
             {
-                int counter = blockEntity.incrementCounter();
-                pPlayer.sendSystemMessage(Component.literal("Plastic Planter used %d/10 times.".formatted(counter)));
+                int counter = blockEntity.getPassedTime();
+                int maxCounter = blockEntity.getFullGrowthTime();
+                pPlayer.sendSystemMessage(Component.literal("Plastic Planter Growth: %d/%d.".formatted(counter, maxCounter)));
 
-                if (counter == 10) { pPlayer.sendSystemMessage(Component.literal("Oh! Shiny!")); }
-                //return InteractionResult.sidedSuccess(pLevel.isClientSide());
                 return InteractionResult.SUCCESS;
             }
         }

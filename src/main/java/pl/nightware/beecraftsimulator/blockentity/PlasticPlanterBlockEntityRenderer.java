@@ -8,6 +8,8 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -20,6 +22,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.registries.ForgeRegistries;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
+import pl.nightware.beecraftsimulator.block.PlanterBlock;
 import pl.nightware.beecraftsimulator.init.ModItemInit;
 
 public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<PlasticPlanterBlockEntity>
@@ -39,10 +42,14 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
         if (level == null) { return; }
 
         BlockPos pos = blockEntity.getBlockPos().above();
+        float cabbageScaleMultiplier = blockEntity.getCabbageScale();
+        int elapsedTime = blockEntity.getPassedTime();
+        BeeCraftSimulator.LOGGER.warn("received: %d".formatted(elapsedTime));
+        int requiredTime = blockEntity.getFullGrowthTime();
+        float finalCabbageScale = ((float)elapsedTime / (float)requiredTime) * cabbageScaleMultiplier;
 
-        float max = 2f;
-        float min = .5f;
-        float range = max - min + 1f;
+        poseStack.pushPose();
+        poseStack.scale(finalCabbageScale, finalCabbageScale, finalCabbageScale);
 
         this.context.getItemRenderer().renderStatic(
                 stack,
@@ -57,5 +64,7 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
                 level,
                 0
                 );
+
+        poseStack.popPose();
     }
 }
