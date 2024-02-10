@@ -48,7 +48,7 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
         double moveDownRatio = ((double)elapsedTime / (double)requiredTime) * 0.5;
         float finalCabbageScale = ((float)elapsedTime / (float)requiredTime) * cabbageScaleMultiplier;
 
-        if (finalCabbageScale < 0.15f) { finalCabbageScale = 0.15f; moveDownRatio = 0.1f; }
+        if (finalCabbageScale < 0.15f) { finalCabbageScale = 0.15f; moveDownRatio = 0.05f; }
 
         poseStack.pushPose();
         poseStack.translate(0.5, 1 + moveDownRatio, 0.5);
