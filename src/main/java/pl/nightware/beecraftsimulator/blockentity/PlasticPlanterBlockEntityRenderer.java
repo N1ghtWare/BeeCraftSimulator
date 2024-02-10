@@ -45,13 +45,13 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
         float cabbageScaleMultiplier = blockEntity.getCabbageScale();
         int elapsedTime = blockEntity.getPassedTime();
         int requiredTime = blockEntity.getFullGrowthTime();
-        double moveDownRatio = ((double)elapsedTime / (double)requiredTime) * 0.5;
+        double moveUpRatio = ((double)elapsedTime / (double)requiredTime) * 0.5;
         float finalCabbageScale = ((float)elapsedTime / (float)requiredTime) * cabbageScaleMultiplier;
 
-        if (finalCabbageScale < 0.15f) { finalCabbageScale = 0.15f; moveDownRatio = 0.05f; }
+        if (finalCabbageScale < 0.15f) { finalCabbageScale = 0.15f; moveUpRatio = 0f; }
 
         poseStack.pushPose();
-        poseStack.translate(0.5, 1 + moveDownRatio, 0.5);
+        poseStack.translate(0.5, 0.8 + moveUpRatio, 0.5);
         poseStack.scale(finalCabbageScale, finalCabbageScale, finalCabbageScale);
 
         this.context.getItemRenderer().renderStatic(
