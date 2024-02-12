@@ -3,9 +3,9 @@
 	"parent": "plastic_planter",
 	"texture_size": [128, 64],
 	"textures": {
-		"0": "beecraftsimulator:block/plastic",
+		"0": "beecraftsimulator:block/plastic_planter",
 		"1": "minecraft:block/dirt",
-		"particle": "beecraftsimulator:block/plastic"
+		"particle": "beecraftsimulator:block/plastic_planter"
 	},
 	"elements": [
 		{
