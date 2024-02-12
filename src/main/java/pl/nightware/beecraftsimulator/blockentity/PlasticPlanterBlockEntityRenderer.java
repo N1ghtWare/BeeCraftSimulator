@@ -46,8 +46,9 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
         //cabbageScaleMultiplier = 1.2f;
         int elapsedTime = blockEntity.getPassedTime();
         int requiredTime = blockEntity.getFullGrowthTime();
-        double moveUpRatio = ((double)elapsedTime / (double)requiredTime) / 2f * cabbageScaleMultiplier;
-        double additionalYFix = ((double)elapsedTime / (double)requiredTime) * 0.05f;
+        double ratio = ((double)elapsedTime / (double)requiredTime);
+        double moveUpRatio = ratio / 2f * cabbageScaleMultiplier;
+        double additionalYFix = ratio * 0.05f;
         float finalCabbageScale = ((float)elapsedTime / (float)requiredTime) * cabbageScaleMultiplier;
 
         if (finalCabbageScale < 0.2f) { finalCabbageScale = 0.2f; moveUpRatio = finalCabbageScale / 2; }
@@ -64,7 +65,7 @@ public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<Pl
                         level.getBrightness(LightLayer.BLOCK, pos),
                         level.getBrightness(LightLayer.SKY, pos)
                 ),
-                OverlayTexture.u(0f),
+                OverlayTexture.pack(10 - (int)(ratio * 10), 10),
                 poseStack,
                 multiBufferSource,
                 level,
