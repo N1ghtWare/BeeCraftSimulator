@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
+import pl.nightware.beecraftsimulator.block.CandyPlanterBlock;
 import pl.nightware.beecraftsimulator.block.DarkFireBlock;
 import pl.nightware.beecraftsimulator.block.PlasticPlanterBlock;
 
@@ -26,6 +27,16 @@ public class ModBlockInit
             ));
     public static final RegistryObject<BlockItem> PLASTIC_PLANTER_ITEM = ModItemInit.ITEMS.register("plastic_planter",
             () -> new BlockItem(ModBlockInit.PLASTIC_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
+    public static final RegistryObject<CandyPlanterBlock> CANDY_PLANTER = BLOCKS.register("candy_planter",
+            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+            ));
+    public static final RegistryObject<BlockItem> CANDY_PLANTER_ITEM = ModItemInit.ITEMS.register("candy_planter",
+            () -> new BlockItem(ModBlockInit.CANDY_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
 

@@ -15,18 +15,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class PlasticPlanterBlockEntityRenderer implements BlockEntityRenderer<PlasticPlanterBlockEntity>
+public class CandyPlanterBlockEntityRenderer implements BlockEntityRenderer<CandyPlanterBlockEntity>
 {
     private final BlockEntityRendererProvider.Context context;
     private final Item cabbage = ForgeRegistries.ITEMS.getValue(new ResourceLocation("beecraftsimulator:cabbage"));
     private final ItemStack stack = new ItemStack(cabbage);
 
-    public PlasticPlanterBlockEntityRenderer(BlockEntityRendererProvider.Context _context)
+    public CandyPlanterBlockEntityRenderer(BlockEntityRendererProvider.Context _context)
     {
         this.context = _context;
     }
     @Override
-    public void render(PlasticPlanterBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, int packedOverlay)
+    public void render(CandyPlanterBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, int packedOverlay)
     {
         Level level = blockEntity.getLevel();
         if (level == null) { return; }

@@ -19,16 +19,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import org.jetbrains.annotations.Nullable;
-import pl.nightware.beecraftsimulator.blockentity.PlasticPlanterBlockEntity;
-import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
+import pl.nightware.beecraftsimulator.blockentity.CandyPlanterBlockEntity;
+import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 
 
-public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
+public class CandyPlanterBlock extends PlanterBlock implements EntityBlock
 {
-    public PlasticPlanterBlock(Properties pProperties)
+    public CandyPlanterBlock(Properties pProperties)
     {
         super(pProperties);
         registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -37,14 +37,14 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return pLevel.isClientSide() ? null : (_level, _pos, _state, _blockEntity) -> ((PlasticPlanterBlockEntity)_blockEntity).tick();
+        return pLevel.isClientSide() ? null : (_level, _pos, _state, _blockEntity) -> ((CandyPlanterBlockEntity)_blockEntity).tick();
     }
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState)
     {
-        return ModBlockEntitiesInit.PLASTIC_PLANTER_ENTITY.get().create(blockPos, blockState);
+        return ModBlockEntitiesInit.CANDY_PLANTER_ENTITY.get().create(blockPos, blockState);
     }
 
     @Override
@@ -65,11 +65,11 @@ public class PlasticPlanterBlock extends PlanterBlock implements EntityBlock
         if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND)
         {
             BlockEntity _blockEntity = pLevel.getBlockEntity(pPos);
-            if (_blockEntity instanceof PlasticPlanterBlockEntity blockEntity)
+            if (_blockEntity instanceof CandyPlanterBlockEntity blockEntity)
             {
                 int counter = blockEntity.getPassedTime();
                 int maxCounter = blockEntity.getFullGrowthTime();
-                pPlayer.sendSystemMessage(Component.literal("Plastic Planter Growth: %d/%d.".formatted(counter, maxCounter)));
+                pPlayer.sendSystemMessage(Component.literal("Candy Planter Growth: %d/%d.".formatted(counter, maxCounter)));
 
                 return InteractionResult.SUCCESS;
             }

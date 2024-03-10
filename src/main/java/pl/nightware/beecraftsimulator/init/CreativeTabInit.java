@@ -21,6 +21,7 @@ public class CreativeTabInit
                         output.accept(ModItemInit.ROYAL_JELLY.get());
                         output.accept(ModItemInit.STAR_JELLY.get());
                         output.accept(ModBlockInit.PLASTIC_PLANTER_ITEM.get());
+                        output.accept(ModBlockInit.CANDY_PLANTER_ITEM.get());
                         output.accept(ModItemInit.TREAT.get());
                         output.accept(ModItemInit.STAR_TREAT.get());
                         output.accept(ModItemInit.ATOMIC_TREAT.get());

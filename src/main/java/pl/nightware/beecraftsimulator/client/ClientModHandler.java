@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
+import pl.nightware.beecraftsimulator.blockentity.CandyPlanterBlockEntityRenderer;
 import pl.nightware.beecraftsimulator.blockentity.PlasticPlanterBlockEntityRenderer;
 import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 
@@ -26,5 +27,6 @@ public class ClientModHandler
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event)
     {
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.PLASTIC_PLANTER_ENTITY.get(), PlasticPlanterBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntitiesInit.CANDY_PLANTER_ENTITY.get(), CandyPlanterBlockEntityRenderer::new);
     }
 }

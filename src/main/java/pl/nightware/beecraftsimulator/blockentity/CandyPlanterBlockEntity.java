@@ -11,14 +11,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 
-public class PlasticPlanterBlockEntity extends BlockEntity
+public class CandyPlanterBlockEntity extends BlockEntity
 {
     private int ticksOfGrowth = 0;
     public int ticksRequiredForFullGrowth = 100;
     public float cabbageScaleMultiplier = 1f;
-    public PlasticPlanterBlockEntity(BlockPos pPos, BlockState pBlockState)
+    public CandyPlanterBlockEntity(BlockPos pPos, BlockState pBlockState)
     {
-        super(ModBlockEntitiesInit.PLASTIC_PLANTER_ENTITY.get(), pPos, pBlockState);
+        super(ModBlockEntitiesInit.CANDY_PLANTER_ENTITY.get(), pPos, pBlockState);
     }
 
     public void tick()
