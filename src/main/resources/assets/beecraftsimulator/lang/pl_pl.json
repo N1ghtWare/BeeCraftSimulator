@@ -1,0 +1,19 @@
+{
+  "creative_tab.beecraftsimulator_tab": "Bee Craft Simulator",
+
+  "item.beecraftsimulator.royal_jelly": "Pszczele mleczko",
+  "item.beecraftsimulator.star_jelly": "Gwiezdne mleczko",
+  "item.beecraftsimulator.treat": "Przysmak",
+  "item.beecraftsimulator.star_treat": "Gwiezdny przysmak",
+  "item.beecraftsimulator.atomic_treat": "Atomowy przysmak",
+  "item.beecraftsimulator.sunflower_seed": "Nasiono słonecznika",
+  "item.beecraftsimulator.strawberry": "Truskawka",
+  "item.beecraftsimulator.pineapple": "Ananas",
+  "item.beecraftsimulator.blueberry": "Borówka",
+  "item.beecraftsimulator.bitterberry": "Gorzka jagoda",
+  "item.beecraftsimulator.neonberry": "Neonowa jagoda",
+
+  "block.beecraftsimulator.plastic_planter": "Plastikowa doniczka",
+  "block.beecraftsimulator.cabbage": "Kapusta",
+  "block.beecraftsimulator.candy_planter": "Cukierkowa doniczka"
+}

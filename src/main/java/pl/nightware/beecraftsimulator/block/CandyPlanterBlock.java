@@ -84,7 +84,7 @@ public class CandyPlanterBlock extends PlanterBlock implements EntityBlock
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.or(box(4, 0, 4, 12, 1, 12), box(3, 1, 3, 13, 3, 13), box(2, 3, 2, 14, 9, 14), box(3, 8, 3, 13, 14, 13), box(13, 9, 0, 16, 15, 16), box(0, 9, 0, 3, 15, 16), box(3, 9, 0, 13, 15, 3), box(3, 9, 13, 13, 15, 16));
+        return Shapes.or(box(2, 0, 2, 14, 10, 14), box(3, 8, 3, 13, 14, 13), box(13, 10, 0, 16, 15, 16), box(0, 10, 0, 3, 15, 16), box(3, 10, 0, 13, 15, 3), box(3, 10, 13, 13, 15, 16));
     }
 
 
