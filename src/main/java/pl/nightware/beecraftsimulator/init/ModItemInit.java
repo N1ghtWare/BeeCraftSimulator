@@ -1,9 +1,7 @@
 package pl.nightware.beecraftsimulator.init;
 
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -83,7 +81,14 @@ public class ModItemInit
     public static final RegistryObject<Item> NEONBERRY = ITEMS.register("neonberry",
             () -> new Item(new Item.Properties()
                     .rarity(Rarity.UNCOMMON)
-                    .food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f).alwaysEat().build()
+                    .food((new FoodProperties.Builder())
+                            .nutrition(4)
+                            .saturationMod(0.3f)
+                            .alwaysEat()
 
+                            .build()
                     )));
+
+    public static final RegistryObject<ShovelItem> SCOOPER = ITEMS.register("scooper",
+            () -> new ShovelItem(ModTierInit.FIELD_TOOL, 1, 1, new Item.Properties()));
 }
