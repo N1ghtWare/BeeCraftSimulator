@@ -15,5 +15,7 @@
 
   "block.beecraftsimulator.plastic_planter": "Plastic Planter",
   "block.beecraftsimulator.cabbage": "Cabbage",
-  "block.beecraftsimulator.candy_planter": "Candy Planter"
+  "block.beecraftsimulator.candy_planter": "Candy Planter",
+
+  "effect.beecraftsimulator.radiation": "Radiation"
 }

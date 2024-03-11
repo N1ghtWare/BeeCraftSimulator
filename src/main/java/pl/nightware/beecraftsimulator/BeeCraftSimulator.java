@@ -1,11 +1,11 @@
 package pl.nightware.beecraftsimulator;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.Items;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import pl.nightware.beecraftsimulator.effect.ModEffectsInit;
 import pl.nightware.beecraftsimulator.init.*;
 
 @Mod(BeeCraftSimulator.MOD_ID)
@@ -20,6 +20,7 @@ public class BeeCraftSimulator
         ModItemInit.ITEMS.register(eventBus);
         ModBlockInit.BLOCKS.register(eventBus);
         ModBlockEntitiesInit.BLOCK_ENTITIES.register(eventBus);
+        ModEffectsInit.MOB_EFFECTS.register(eventBus);
         CreativeTabInit.TABS.register(eventBus);
         ModMenuInit.MENU_TYPES.register(eventBus);
         LOGGER.debug("Bee Craft Simulator Event Bus Finished!");

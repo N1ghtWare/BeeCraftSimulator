@@ -15,5 +15,7 @@
 
   "block.beecraftsimulator.plastic_planter": "Plastikowa doniczka",
   "block.beecraftsimulator.cabbage": "Kapusta",
-  "block.beecraftsimulator.candy_planter": "Cukierkowa doniczka"
+  "block.beecraftsimulator.candy_planter": "Cukierkowa doniczka",
+
+  "effect.beecraftsimulator.radiation": "Promieniowanie"
 }
