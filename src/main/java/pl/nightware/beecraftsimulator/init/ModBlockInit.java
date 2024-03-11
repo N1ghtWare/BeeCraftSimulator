@@ -19,6 +19,7 @@ public class ModBlockInit
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BeeCraftSimulator.MOD_ID);
 
+    // planters
     public static final RegistryObject<PlasticPlanterBlock> PLASTIC_PLANTER = BLOCKS.register("plastic_planter",
             () -> new PlasticPlanterBlock(BlockBehaviour.Properties.of()
                     //.dynamicShape()
@@ -40,6 +41,29 @@ public class ModBlockInit
                     .stacksTo(1)
             ));
 
+    public static final RegistryObject<Block> CABBAGE = BLOCKS.register("cabbage",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.GRASS)
+            ));
+    public static final RegistryObject<BlockItem> CABBAGE_ITEM = ModItemInit.ITEMS.register("cabbage",
+            () -> new BlockItem(ModBlockInit.CABBAGE.get(), new Item.Properties()
+
+            ));
+
+    // blocks
+
+    public static final RegistryObject<Block> FIELD_BLOCK = BLOCKS.register("field_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.GRASS)
+                    .noCollission()
+            ));
+    public static final RegistryObject<BlockItem> FIELD_BLOCK_ITEM = ModItemInit.ITEMS.register("field_block",
+            () -> new BlockItem(ModBlockInit.FIELD_BLOCK.get(), new Item.Properties()
+
+            ));
+
+    // misc
+
     public static final RegistryObject<DarkFireBlock> DARK_FIRE = BLOCKS.register("dark_fire",
             () -> new DarkFireBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.FIRE)
@@ -54,13 +78,4 @@ public class ModBlockInit
 
     public static final RegistryObject<BlockItem> DARK_FIRE_ITEM = ModItemInit.ITEMS.register("dark_fire",
             () -> new BlockItem(ModBlockInit.DARK_FIRE.get(), new Item.Properties()));
-
-    public static final RegistryObject<Block> CABBAGE = BLOCKS.register("cabbage",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.GRASS)
-            ));
-    public static final RegistryObject<BlockItem> CABBAGE_ITEM = ModItemInit.ITEMS.register("cabbage",
-            () -> new BlockItem(ModBlockInit.CABBAGE.get(), new Item.Properties()
-
-            ));
 }
