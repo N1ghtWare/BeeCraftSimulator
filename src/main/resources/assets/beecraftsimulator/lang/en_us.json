@@ -17,5 +17,7 @@
   "block.beecraftsimulator.cabbage": "Cabbage",
   "block.beecraftsimulator.candy_planter": "Candy Planter",
 
-  "effect.beecraftsimulator.radiation": "Radiation"
+  "effect.beecraftsimulator.radiation": "Radiation",
+
+  "sounds.beecraftsimulator.radiation": "Entity radiates"
 }

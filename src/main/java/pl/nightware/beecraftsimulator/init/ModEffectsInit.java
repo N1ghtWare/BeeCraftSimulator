@@ -1,4 +1,4 @@
-package pl.nightware.beecraftsimulator.effect;
+package pl.nightware.beecraftsimulator.init;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
+import pl.nightware.beecraftsimulator.effect.RadiationEffect;
 
 public class ModEffectsInit {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS
