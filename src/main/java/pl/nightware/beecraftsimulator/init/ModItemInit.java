@@ -80,7 +80,7 @@ public class ModItemInit
                     )));
 
     public static final RegistryObject<Item> NEONBERRY = ITEMS.register("neonberry",
-            () -> new ModNeonberryItem());
+            ModNeonberryItem::new);
 
     public static final RegistryObject<ShovelItem> SCOOPER = ITEMS.register("scooper",
             () -> new ShovelItem(ModTierInit.FIELD_TOOL, 1, 1, new Item.Properties()));
