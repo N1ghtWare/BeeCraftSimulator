@@ -20,6 +20,17 @@ public class ModBlockInit
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BeeCraftSimulator.MOD_ID);
 
     // planters
+    public static final RegistryObject<CandyPlanterBlock> PAPER_PLANTER = BLOCKS.register("paper_planter",
+            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+            ));
+    public static final RegistryObject<BlockItem> PAPER_PLANTER_ITEM = ModItemInit.ITEMS.register("paper_planter",
+            () -> new BlockItem(ModBlockInit.PAPER_PLANTER.get(), new Item.Properties()
+                    .stacksTo(64)
+            ));
+
     public static final RegistryObject<PlasticPlanterBlock> PLASTIC_PLANTER = BLOCKS.register("plastic_planter",
             () -> new PlasticPlanterBlock(BlockBehaviour.Properties.of()
                     //.dynamicShape()
@@ -38,6 +49,26 @@ public class ModBlockInit
             ));
     public static final RegistryObject<BlockItem> CANDY_PLANTER_ITEM = ModItemInit.ITEMS.register("candy_planter",
             () -> new BlockItem(ModBlockInit.CANDY_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
+    public static final RegistryObject<CandyPlanterBlock> BLUE_CLAY_PLANTER = BLOCKS.register("blue_clay_planter",
+            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+            ));
+    public static final RegistryObject<BlockItem> BLUE_CLAY_PLANTER_ITEM = ModItemInit.ITEMS.register("blue_clay_planter",
+            () -> new BlockItem(ModBlockInit.BLUE_CLAY_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
+    public static final RegistryObject<CandyPlanterBlock> RED_CLAY_PLANTER = BLOCKS.register("red_clay_planter",
+            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+            ));
+    public static final RegistryObject<BlockItem> RED_CLAY_PLANTER_ITEM = ModItemInit.ITEMS.register("red_clay_planter",
+            () -> new BlockItem(ModBlockInit.RED_CLAY_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
 

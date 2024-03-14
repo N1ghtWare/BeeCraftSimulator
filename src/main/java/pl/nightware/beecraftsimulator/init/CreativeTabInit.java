@@ -22,8 +22,11 @@ public class CreativeTabInit
 
                         output.accept(ModBlockInit.FIELD_BLOCK_ITEM.get());
 
+                        output.accept(ModBlockInit.PAPER_PLANTER_ITEM.get());
                         output.accept(ModBlockInit.PLASTIC_PLANTER_ITEM.get());
                         output.accept(ModBlockInit.CANDY_PLANTER_ITEM.get());
+                        output.accept(ModBlockInit.BLUE_CLAY_PLANTER_ITEM.get());
+                        output.accept(ModBlockInit.RED_CLAY_PLANTER_ITEM.get());
 
                         output.accept(ModItemInit.ROYAL_JELLY.get());
                         output.accept(ModItemInit.STAR_JELLY.get());
