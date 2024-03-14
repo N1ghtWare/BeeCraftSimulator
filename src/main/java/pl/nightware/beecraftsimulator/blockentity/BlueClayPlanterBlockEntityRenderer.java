@@ -33,7 +33,7 @@ public class BlueClayPlanterBlockEntityRenderer implements BlockEntityRenderer<B
 
         BlockPos pos = blockEntity.getBlockPos().above();
         float cabbageScaleMultiplier = blockEntity.getCabbageScale();
-        //cabbageScaleMultiplier = 1.2f;
+        cabbageScaleMultiplier = 1.1f;
         int elapsedTime = blockEntity.getPassedTime();
         int requiredTime = blockEntity.getFullGrowthTime();
         double ratio = ((double)elapsedTime / (double)requiredTime);

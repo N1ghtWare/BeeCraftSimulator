@@ -33,7 +33,7 @@ public class PaperPlanterBlockEntityRenderer implements BlockEntityRenderer<Pape
 
         BlockPos pos = blockEntity.getBlockPos().above();
         float cabbageScaleMultiplier = blockEntity.getCabbageScale();
-        //cabbageScaleMultiplier = 1f;
+        cabbageScaleMultiplier = 0.8f;
         int elapsedTime = blockEntity.getPassedTime();
         int requiredTime = blockEntity.getFullGrowthTime();
         double ratio = ((double)elapsedTime / (double)requiredTime);
@@ -45,7 +45,7 @@ public class PaperPlanterBlockEntityRenderer implements BlockEntityRenderer<Pape
 
         //animation is made here
         poseStack.pushPose();
-        poseStack.translate(0.5, .9 + moveUpRatio + additionalYFix, 0.5);
+        poseStack.translate(0.5, .7 + moveUpRatio + additionalYFix, 0.5);
         poseStack.scale(finalCabbageScale, finalCabbageScale, finalCabbageScale);
 
         this.context.getItemRenderer().renderStatic(

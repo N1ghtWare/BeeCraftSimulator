@@ -11,17 +11,15 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
-import pl.nightware.beecraftsimulator.block.CandyPlanterBlock;
-import pl.nightware.beecraftsimulator.block.DarkFireBlock;
-import pl.nightware.beecraftsimulator.block.PlasticPlanterBlock;
+import pl.nightware.beecraftsimulator.block.*;
 
 public class ModBlockInit
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BeeCraftSimulator.MOD_ID);
 
     // planters
-    public static final RegistryObject<CandyPlanterBlock> PAPER_PLANTER = BLOCKS.register("paper_planter",
-            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+    public static final RegistryObject<PaperPlanterBlock> PAPER_PLANTER = BLOCKS.register("paper_planter",
+            () -> new PaperPlanterBlock(BlockBehaviour.Properties.of()
                     //.dynamicShape()
                     .noOcclusion()
                     .strength(1.5F)
@@ -51,8 +49,8 @@ public class ModBlockInit
             () -> new BlockItem(ModBlockInit.CANDY_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
-    public static final RegistryObject<CandyPlanterBlock> BLUE_CLAY_PLANTER = BLOCKS.register("blue_clay_planter",
-            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+    public static final RegistryObject<BlueClayPlanterBlock> BLUE_CLAY_PLANTER = BLOCKS.register("blue_clay_planter",
+            () -> new BlueClayPlanterBlock(BlockBehaviour.Properties.of()
                     //.dynamicShape()
                     .noOcclusion()
                     .strength(1.5F)
@@ -61,8 +59,8 @@ public class ModBlockInit
             () -> new BlockItem(ModBlockInit.BLUE_CLAY_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
-    public static final RegistryObject<CandyPlanterBlock> RED_CLAY_PLANTER = BLOCKS.register("red_clay_planter",
-            () -> new CandyPlanterBlock(BlockBehaviour.Properties.of()
+    public static final RegistryObject<RedClayPlanterBlock> RED_CLAY_PLANTER = BLOCKS.register("red_clay_planter",
+            () -> new RedClayPlanterBlock(BlockBehaviour.Properties.of()
                     //.dynamicShape()
                     .noOcclusion()
                     .strength(1.5F)
