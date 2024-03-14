@@ -38,11 +38,7 @@ public class ModItemInit
                     )));
 
     public static final RegistryObject<Item> ATOMIC_TREAT = ITEMS.register("atomic_treat",
-            () -> new Item(new Item.Properties()
-                    .rarity(Rarity.UNCOMMON)
-                    .food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.1f).alwaysEat().build()
-
-                    )));
+            ModAtomicTreatItem::new);
 
     public static final RegistryObject<Item> SUNFLOWER_SEED = ITEMS.register("sunflower_seed",
             () -> new Item(new Item.Properties()
@@ -73,11 +69,7 @@ public class ModItemInit
                     )));
 
     public static final RegistryObject<Item> BITTERBERRY = ITEMS.register("bitterberry",
-            () -> new Item(new Item.Properties()
-                    .rarity(Rarity.COMMON)
-                    .food((new FoodProperties.Builder()).nutrition(3).saturationMod(0.3f).alwaysEat().build()
-
-                    )));
+            ModBitterberryItem::new);
 
     public static final RegistryObject<Item> NEONBERRY = ITEMS.register("neonberry",
             ModNeonberryItem::new);

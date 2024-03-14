@@ -24,6 +24,7 @@ public class BeeCraftSimulator
         CreativeTabInit.TABS.register(eventBus);
         ModMenuInit.MENU_TYPES.register(eventBus);
         ModSounds.SOUND_EVENTS.register(eventBus);
+        ModPotionsInit.POTIONS.register(eventBus);
         LOGGER.debug("Bee Craft Simulator Event Bus Finished!");
     }
 }
