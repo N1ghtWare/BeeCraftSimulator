@@ -37,4 +37,14 @@ public class ModBlockEntitiesInit
                     () -> BlockEntityType.Builder.of(RedClayPlanterBlockEntity::new, ModBlockInit.RED_CLAY_PLANTER.get())
                             .build(null)
             );
+    public static final RegistryObject<BlockEntityType<TackyPlanterBlockEntity>> TACKY_PLANTER_ENTITY =
+            BLOCK_ENTITIES.register("tacky_planter",
+                    () -> BlockEntityType.Builder.of(TackyPlanterBlockEntity::new, ModBlockInit.TACKY_PLANTER.get())
+                            .build(null)
+            );
+    public static final RegistryObject<BlockEntityType<PesticidePlanterBlockEntity>> PESTICIDE_PLANTER_ENTITY =
+            BLOCK_ENTITIES.register("pesticide_planter",
+                    () -> BlockEntityType.Builder.of(PesticidePlanterBlockEntity::new, ModBlockInit.PESTICIDE_PLANTER.get())
+                            .build(null)
+            );
 }

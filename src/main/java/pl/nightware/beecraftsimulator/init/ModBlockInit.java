@@ -69,6 +69,26 @@ public class ModBlockInit
             () -> new BlockItem(ModBlockInit.RED_CLAY_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
+    public static final RegistryObject<TackyPlanterBlock> TACKY_PLANTER = BLOCKS.register("tacky_planter",
+            () -> new TackyPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+            ));
+    public static final RegistryObject<BlockItem> TACKY_PLANTER_ITEM = ModItemInit.ITEMS.register("tacky_planter",
+            () -> new BlockItem(ModBlockInit.TACKY_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
+    public static final RegistryObject<PesticidePlanterBlock> PESTICIDE_PLANTER = BLOCKS.register("pesticide_planter",
+            () -> new PesticidePlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+            ));
+    public static final RegistryObject<BlockItem> PESTICIDE_PLANTER_ITEM = ModItemInit.ITEMS.register("pesticide_planter",
+            () -> new BlockItem(ModBlockInit.PESTICIDE_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
 
     public static final RegistryObject<Block> CABBAGE = BLOCKS.register("cabbage",
             () -> new Block(BlockBehaviour.Properties.of()

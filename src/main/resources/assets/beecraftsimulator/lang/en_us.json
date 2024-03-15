@@ -32,6 +32,8 @@
   "block.beecraftsimulator.paper_planter": "Paper Planter",
   "block.beecraftsimulator.red_clay_planter": "Red Clay Planter",
   "block.beecraftsimulator.blue_clay_planter": "Blue Clay Planter",
+  "block.beecraftsimulator.tacky_planter": "Tacky Planter",
+  "block.beecraftsimulator.pesticide_planter": "Pesticide Planter",
 
   "effect.beecraftsimulator.radiation": "Radiation",
 

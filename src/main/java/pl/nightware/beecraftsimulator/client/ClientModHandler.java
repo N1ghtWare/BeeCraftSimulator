@@ -8,11 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import pl.nightware.beecraftsimulator.BeeCraftSimulator;
-import pl.nightware.beecraftsimulator.blockentity.CandyPlanterBlockEntityRenderer;
-import pl.nightware.beecraftsimulator.blockentity.PaperPlanterBlockEntityRenderer;
-import pl.nightware.beecraftsimulator.blockentity.PlasticPlanterBlockEntityRenderer;
-import pl.nightware.beecraftsimulator.blockentity.RedClayPlanterBlockEntityRenderer;
-import pl.nightware.beecraftsimulator.blockentity.BlueClayPlanterBlockEntityRenderer;
+import pl.nightware.beecraftsimulator.blockentity.*;
 import pl.nightware.beecraftsimulator.init.ModBlockEntitiesInit;
 
 @Mod.EventBusSubscriber(modid = BeeCraftSimulator.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -34,5 +30,7 @@ public class ClientModHandler
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.CANDY_PLANTER_ENTITY.get(), CandyPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.RED_CLAY_PLANTER_ENTITY.get(), RedClayPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.BLUE_CLAY_PLANTER_ENTITY.get(), BlueClayPlanterBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntitiesInit.TACKY_PLANTER_ENTITY.get(), TackyPlanterBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntitiesInit.PESTICIDE_PLANTER_ENTITY.get(), PesticidePlanterBlockEntityRenderer::new);
     }
 }
