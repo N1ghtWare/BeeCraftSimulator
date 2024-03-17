@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "plastic_planter",
 	"texture_size": [128, 64],
 	"textures": {
 		"0": "beecraftsimulator:block/plastic_planter",

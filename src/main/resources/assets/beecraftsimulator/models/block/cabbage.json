@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "cabbage",
 	"textures": {
 		"0": "beecraftsimulator:block/cabbage_side",
 		"1": "beecraftsimulator:block/cabbage_top",

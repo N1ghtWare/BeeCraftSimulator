@@ -17,6 +17,11 @@ public class ModBlockEntitiesInit
                     () -> BlockEntityType.Builder.of(PaperPlanterBlockEntity::new, ModBlockInit.PAPER_PLANTER.get())
                             .build(null)
             );
+    public static final RegistryObject<BlockEntityType<TicketPlanterBlockEntity>> TICKET_PLANTER_ENTITY =
+            BLOCK_ENTITIES.register("ticket_planter",
+                    () -> BlockEntityType.Builder.of(TicketPlanterBlockEntity::new, ModBlockInit.TICKET_PLANTER.get())
+                            .build(null)
+            );
     public static final RegistryObject<BlockEntityType<PlasticPlanterBlockEntity>> PLASTIC_PLANTER_ENTITY =
             BLOCK_ENTITIES.register("plastic_planter",
                     () -> BlockEntityType.Builder.of(PlasticPlanterBlockEntity::new, ModBlockInit.PLASTIC_PLANTER.get())
@@ -45,6 +50,11 @@ public class ModBlockEntitiesInit
     public static final RegistryObject<BlockEntityType<PesticidePlanterBlockEntity>> PESTICIDE_PLANTER_ENTITY =
             BLOCK_ENTITIES.register("pesticide_planter",
                     () -> BlockEntityType.Builder.of(PesticidePlanterBlockEntity::new, ModBlockInit.PESTICIDE_PLANTER.get())
+                            .build(null)
+            );
+    public static final RegistryObject<BlockEntityType<HydroponicPlanterBlockEntity>> HYDROPONIC_PLANTER_ENTITY =
+            BLOCK_ENTITIES.register("hydroponic_planter",
+                    () -> BlockEntityType.Builder.of(HydroponicPlanterBlockEntity::new, ModBlockInit.HYDROPONIC_PLANTER.get())
                             .build(null)
             );
 }

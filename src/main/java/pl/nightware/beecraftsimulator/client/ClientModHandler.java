@@ -26,11 +26,13 @@ public class ClientModHandler
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event)
     {
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.PAPER_PLANTER_ENTITY.get(), PaperPlanterBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntitiesInit.TICKET_PLANTER_ENTITY.get(), TicketPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.PLASTIC_PLANTER_ENTITY.get(), PlasticPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.CANDY_PLANTER_ENTITY.get(), CandyPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.RED_CLAY_PLANTER_ENTITY.get(), RedClayPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.BLUE_CLAY_PLANTER_ENTITY.get(), BlueClayPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.TACKY_PLANTER_ENTITY.get(), TackyPlanterBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntitiesInit.PESTICIDE_PLANTER_ENTITY.get(), PesticidePlanterBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntitiesInit.HYDROPONIC_PLANTER_ENTITY.get(), HydroponicPlanterBlockEntityRenderer::new);
     }
 }

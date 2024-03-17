@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "pesticide_planter",
 	"render_type": "cutout_mipped",
 	"texture_size": [64, 64],
 	"textures": {

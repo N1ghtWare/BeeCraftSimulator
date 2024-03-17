@@ -23,9 +23,21 @@ public class ModBlockInit
                     //.dynamicShape()
                     .noOcclusion()
                     .strength(1.5F)
+                    .sound(SoundType.GRASS)
             ));
     public static final RegistryObject<BlockItem> PAPER_PLANTER_ITEM = ModItemInit.ITEMS.register("paper_planter",
             () -> new BlockItem(ModBlockInit.PAPER_PLANTER.get(), new Item.Properties()
+                    .stacksTo(64)
+            ));
+    public static final RegistryObject<TicketPlanterBlock> TICKET_PLANTER = BLOCKS.register("ticket_planter",
+            () -> new TicketPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+                    .sound(SoundType.GRASS)
+            ));
+    public static final RegistryObject<BlockItem> TICKET_PLANTER_ITEM = ModItemInit.ITEMS.register("ticket_planter",
+            () -> new BlockItem(ModBlockInit.TICKET_PLANTER.get(), new Item.Properties()
                     .stacksTo(64)
             ));
 
@@ -87,6 +99,18 @@ public class ModBlockInit
             ));
     public static final RegistryObject<BlockItem> PESTICIDE_PLANTER_ITEM = ModItemInit.ITEMS.register("pesticide_planter",
             () -> new BlockItem(ModBlockInit.PESTICIDE_PLANTER.get(), new Item.Properties()
+                    .stacksTo(1)
+            ));
+    public static final RegistryObject<HydroponicPlanterBlock> HYDROPONIC_PLANTER = BLOCKS.register("hydroponic_planter",
+            () -> new HydroponicPlanterBlock(BlockBehaviour.Properties.of()
+                    //.dynamicShape()
+                    .noOcclusion()
+                    .strength(1.5F)
+                    .lightLevel(s -> 15)
+                    .sound(SoundType.GLASS)
+            ));
+    public static final RegistryObject<BlockItem> HYDROPONIC_PLANTER_ITEM = ModItemInit.ITEMS.register("hydroponic_planter",
+            () -> new BlockItem(ModBlockInit.HYDROPONIC_PLANTER.get(), new Item.Properties()
                     .stacksTo(1)
             ));
 

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "beecraftsimulator:item/hydroponic_planter"
+  },
+  "render_type": "translucent"
+}

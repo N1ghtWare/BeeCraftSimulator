@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "candy_planter",
 	"texture_size": [128, 64],
 	"textures": {
 		"0": "beecraftsimulator:block/candy_planter",
