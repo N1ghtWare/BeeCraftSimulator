@@ -71,6 +71,8 @@ public class PesticidePlanterBlock extends PlanterBlock implements EntityBlock
                 int maxCounter = blockEntity.getFullGrowthTime();
                 pPlayer.sendSystemMessage(Component.literal("Pesticide Planter Growth: %d/%d.".formatted(counter, maxCounter)));
 
+                BlockGetter currentWorld;
+
                 return InteractionResult.SUCCESS;
             }
         }

@@ -60,24 +60,6 @@ public class BlueClayPlanterBlock extends PlanterBlock implements EntityBlock
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit)
-    {
-        if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND)
-        {
-            BlockEntity _blockEntity = pLevel.getBlockEntity(pPos);
-            if (_blockEntity instanceof BlueClayPlanterBlockEntity blockEntity)
-            {
-                int counter = blockEntity.getPassedTime();
-                int maxCounter = blockEntity.getFullGrowthTime();
-                pPlayer.sendSystemMessage(Component.literal("Blue Clay Planter Growth: %d/%d.".formatted(counter, maxCounter)));
-
-                return InteractionResult.SUCCESS;
-            }
-        }
-
-        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
-    }
-    @Override
     public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return Shapes.empty();
     }

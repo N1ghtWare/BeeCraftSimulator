@@ -7,6 +7,10 @@ import net.minecraft.util.Mth;
 
 public class MiscUtils
 {
+    public static void createParticleLine(BlockPos from, BlockPos to, int density, BiConsumer<Vec3i, Vec3i> func) {
+        createParticleLine(from, to, density, 1, func);
+    }
+
     public static void createParticleLine(BlockPos fromPos, BlockPos toPos, int density, int increments, BiConsumer<Vec3i, Vec3i> func)
     {
         BlockPos goalPos = toPos.subtract(fromPos);
